@@ -1,0 +1,29 @@
+{
+    "name": "jbtcd/spryker-sentry",
+    "description": "A Spryker SDK for Sentry (sentry.io)",
+    "type": "library",
+    "require": {
+        "sentry/sdk": "^4.0",
+        "spryker/monitoring": "^2.0",
+        "spryker/kernel": "^3.79"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SprykerSentry\\": "src/SprykerSentry"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jonah Böther",
+            "email": "mail@jbtcd.me"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
