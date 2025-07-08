@@ -5,7 +5,7 @@
     "require": {
         "sentry/sdk": "^4.0",
         "spryker/monitoring": "^2.0",
-        "spryker/kernel": "^3.79"
+        "spryker/kernel": "^3.0"
     },
     "license": "MIT",
     "autoload": {
