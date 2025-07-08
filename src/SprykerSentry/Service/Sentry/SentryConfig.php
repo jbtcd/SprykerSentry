@@ -10,6 +10,14 @@ use SprykerSentry\Shared\Sentry\SentryConstants;
 class SentryConfig extends AbstractBundleConfig
 {
     /**
+     * @return string
+     */
+    public function getApplicationEnvironment(): string
+    {
+        return APPLICATION_ENV;
+    }
+
+    /**
      * @return ?string
      */
     public function getSentryDataSourceName(): ?string
@@ -26,10 +34,18 @@ class SentryConfig extends AbstractBundleConfig
     }
 
     /**
-     * @return string
+     * @var int
      */
-    public function getApplicationEnvironment(): string
+    public function getSentryContextLines(): int
     {
-        return APPLICATION_ENV;
+        return $this->get(SentryConstants::SENTRY_CONTEXT_LINES, 5);
+    }
+
+    /**
+     * @var bool
+     */
+    public function getAttachStacktrace(): bool
+    {
+        return $this->get(SentryConstants::SENTRY_ATTACH_STACKTRACE, false);
     }
 }

@@ -39,8 +39,11 @@ class SentryDependencyProvider extends AbstractBundleDependencyProvider
     {
         $container->set(self::SENTRY_WRAPPER, function() {
             $options = [
+                'environment' => $this->getConfig()->getApplicationEnvironment(),
                 'dsn' => $this->getConfig()->getSentryDataSourceName(),
                 'error_types' => $this->getConfig()->getSentryErrorLevel(),
+                'context_lines' => $this->getConfig()->getSentryContextLines(),
+                'attach_stacktrace' => $this->getConfig()->getAttachStacktrace(),
             ];
 
             return new SentryWrapper($options);

@@ -58,7 +58,7 @@ class SentryMonitoringExtensionPlugin extends AbstractPlugin implements Monitori
      */
     public function markStartTransaction(): void
     {
-        // TODO: NOT IMPLEMENT YET
+        dd('START TRANSACTION');
     }
 
     /**

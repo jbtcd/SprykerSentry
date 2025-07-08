@@ -7,7 +7,7 @@ namespace SprykerSentry\Service\Sentry;
 use Spryker\Service\Kernel\AbstractServiceFactory;
 use SprykerSentry\Service\Sentry\Wrapper\SentryWrapper;
 
-class SentryFactory extends AbstractServiceFactory
+class SentryServiceFactory extends AbstractServiceFactory
 {
     public function getSentryWrapper(): SentryWrapper
     {

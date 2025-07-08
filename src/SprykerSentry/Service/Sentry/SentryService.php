@@ -8,7 +8,7 @@ use Spryker\Service\Kernel\AbstractService;
 use Throwable;
 
 /**
- * @method \SprykerSentry\Service\Sentry\SentryFactory getFactory()
+ * @method \SprykerSentry\Service\Sentry\SentryServiceFactory getFactory()
  */
 class SentryService extends AbstractService
 {
