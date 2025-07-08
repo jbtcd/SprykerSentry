@@ -10,4 +10,9 @@ interface SentryConstants
      * @var string
      */
     public const SENTRY_DSN = 'SENTRY:CONFIG:DATA_SOURCE_NAME';
+
+    /**
+     * @var string
+     */
+    public const SENTRY_ERROR_LEVEL = 'SENTRY:CONFIG:ERROR_LEVEL';
 }

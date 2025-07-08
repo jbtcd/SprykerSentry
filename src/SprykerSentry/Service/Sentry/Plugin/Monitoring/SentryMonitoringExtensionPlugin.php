@@ -4,9 +4,13 @@ declare(strict_types = 1);
 
 namespace SprykerSentry\Service\Sentry\Plugin\Monitoring;
 
+use ErrorException;
 use Spryker\Service\Kernel\AbstractPlugin;
 use Spryker\Service\MonitoringExtension\Dependency\Plugin\MonitoringExtensionPluginInterface;
 
+/**
+ * @method \SprykerSentry\Service\Sentry\SentryConfig getConfig()
+ */
 class SentryMonitoringExtensionPlugin extends AbstractPlugin implements MonitoringExtensionPluginInterface
 {
     /**
@@ -19,7 +23,17 @@ class SentryMonitoringExtensionPlugin extends AbstractPlugin implements Monitori
      */
     public function setError(string $message, $exception): void
     {
-        dd($exception);
+        if ($exception instanceof ErrorException) {
+            if (($exception->getSeverity() & $this->getConfig()->getSentryErrorLevel()) !== $exception->getSeverity()) {
+                dd('This ErrorException should be ignored', $exception);
+
+                return;
+            }
+
+            dd('This ErrorException should be send to sentry', $exception);
+        }
+
+        dd('This is a normal exception', $exception);
     }
 
     /**
