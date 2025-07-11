@@ -21,4 +21,13 @@ class SentryService extends AbstractService
     {
         $this->getFactory()->getSentryWrapper()->captureException($exception);
     }
+
+    /**
+     * @var string $key
+     * @var string $value
+     */
+    public function setTag(string $key, string $value): void
+    {
+        $this->getFactory()->getSentryWrapper()->setTag($key, $value);
+    }
 }

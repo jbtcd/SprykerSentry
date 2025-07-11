@@ -36,7 +36,15 @@ class SentryMonitoringExtensionPlugin extends AbstractPlugin implements Monitori
      */
     public function setApplicationName(?string $application = null, ?string $store = null, ?string $environment = null): void
     {
-        // TODO: NOT IMPLEMENT YET
+        if ($application !== null) {
+            $this->getService()->setTag('application', $application);
+        }
+        if ($store !== null) {
+            $this->getService()->setTag('store', $store);
+        }
+        if ($environment !== null) {
+            $this->getService()->setTag('environment', $environment);
+        }
     }
 
     /**
